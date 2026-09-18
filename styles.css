@@ -1,0 +1,296 @@
+/* ==========================================================================
+   MDM4U — custom.css
+   S'ajoute par-dessus w3.css, w3-theme-teal.css et Roboto.
+   Ne modifie aucun fichier HTML : ce fichier remplace seulement l'apparence.
+   ========================================================================== */
+
+:root {
+  --teal-900: #063b37;
+  --teal-800: #0a544d;
+  --teal-600: #0e8c80;
+  --teal-200: #a5ddd5;
+  --mint:     #d9f0ec;
+  --pink:     #ff2e77;
+  --pink-dark:#d4145a;
+  --page:     #f2f6f5;
+  --text:     #14302c;
+
+  --heading-font: system-ui, -apple-system, "Segoe UI", Arial, "Noto Sans", sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+
+body {
+  background: var(--page) !important;
+  color: var(--text);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--pink); color: #fff; }
+
+a { text-decoration-thickness: 2px; text-underline-offset: 3px; }
+
+/* --------------------------------------------------------------------------
+   Palette du thème w3-theme (remplace le teal par défaut par la nôtre)
+   -------------------------------------------------------------------------- */
+
+.w3-theme,
+.w3-hover-theme:hover {
+  background-color: var(--teal-900) !important;
+  color: #fff !important;
+}
+
+.w3-text-theme { color: var(--teal-600) !important; }
+
+/* --------------------------------------------------------------------------
+   Barre latérale
+   -------------------------------------------------------------------------- */
+
+.w3-sidebar {
+  background-color: var(--teal-900) !important;
+  border: 0 !important;
+  box-shadow: 2px 0 24px rgba(6, 59, 55, .25);
+}
+
+/* Logo en haut de la barre */
+.w3-sidebar > a.w3-bar-item:first-child {
+  padding: 24px 20px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, .12) !important;
+}
+
+/* Bouton "Close" sur petits écrans */
+.w3-sidebar > a.w3-hide-large {
+  color: var(--mint) !important;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255, 255, 255, .12) !important;
+}
+.w3-sidebar > a.w3-hide-large:hover { background: rgba(255, 255, 255, .08) !important; }
+
+/* Étiquettes "Module X" (celles avec la classe w3-teal) */
+.w3-sidebar .w3-teal {
+  background: none !important;
+  color: var(--teal-200) !important;
+  font-size: .8125rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: 18px 20px 8px !important;
+  cursor: default;
+}
+
+/* Liens des modules (1.1, 1.2, etc.) */
+.w3-sidebar .w3-bar-item.w3-button {
+  padding: 9px 20px !important;
+  color: rgba(255, 255, 255, .82) !important;
+  font-weight: 600;
+  border-left: 3px solid transparent;
+  background: none !important;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+.w3-sidebar .w3-bar-item.w3-button:hover {
+  background: rgba(255, 255, 255, .07) !important;
+  border-left-color: var(--teal-600);
+  color: #fff !important;
+}
+
+/* --------------------------------------------------------------------------
+   Voile derrière la barre (petits écrans)
+   -------------------------------------------------------------------------- */
+
+.w3-overlay { background-color: rgba(6, 59, 55, .6) !important; }
+
+/* --------------------------------------------------------------------------
+   Barre du haut + bouton hamburger
+   -------------------------------------------------------------------------- */
+
+#myTop {
+  background-color: var(--teal-900) !important;
+  padding: 10px 16px !important;
+}
+
+#myTop .fa-bars {
+  background: rgba(255, 255, 255, .12) !important;
+  color: #fff !important;
+  border-radius: 4px;
+  padding: 10px 14px !important;
+}
+#myTop .fa-bars:hover { background: rgba(255, 255, 255, .22) !important; }
+
+#myIntro { font-weight: 800; letter-spacing: -.01em; }
+
+/* --------------------------------------------------------------------------
+   Corrige le décalage à gauche sur petits écrans
+   (w3.css ne remet pas margin-left à 0 tout seul pour ce gabarit)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .w3-main { margin-left: 0 !important; }
+}
+
+/* --------------------------------------------------------------------------
+   Entête de page (le grand bandeau avec le titre)
+   -------------------------------------------------------------------------- */
+
+header.w3-container.w3-theme {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(48px, 8vw, 96px) clamp(24px, 5vw, 64px) clamp(56px, 7vw, 84px) !important;
+}
+
+header.w3-container.w3-theme::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 88% -20%, rgba(255, 255, 255, .18), transparent 55%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, .05) 0 2px, transparent 2px 36px);
+}
+
+header.w3-container.w3-theme h1 {
+  position: relative;
+  z-index: 1;
+  max-width: 20ch;
+  font-family: var(--heading-font);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -.03em;
+}
+
+header.w3-container.w3-theme h1::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 6px;
+  margin-top: 22px;
+  border-radius: 3px;
+  background: var(--pink);
+}
+
+/* --------------------------------------------------------------------------
+   Contenu (le gros bloc de texte, ni l'entête ni le pied de page)
+   -------------------------------------------------------------------------- */
+
+.w3-main > div.w3-container:not(.w3-top) {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding: clamp(32px, 5vw, 56px) clamp(24px, 5vw, 64px) 72px !important;
+}
+
+.w3-main > div.w3-container:not(.w3-top) h1,
+.w3-main > div.w3-container:not(.w3-top) h2,
+.w3-main > div.w3-container:not(.w3-top) h3 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1.2;
+  color: var(--teal-900);
+  margin: 1.9em 0 .5em;
+}
+.w3-main > div.w3-container:not(.w3-top) > h1:first-child,
+.w3-main > div.w3-container:not(.w3-top) > h2:first-child,
+.w3-main > div.w3-container:not(.w3-top) > h3:first-child {
+  margin-top: 0;
+}
+
+.w3-main > div.w3-container:not(.w3-top) h1 { font-size: clamp(1.7rem, 3.2vw, 2.15rem); }
+.w3-main > div.w3-container:not(.w3-top) h2 { font-size: clamp(1.35rem, 2.6vw, 1.65rem); }
+.w3-main > div.w3-container:not(.w3-top) h3 { font-size: 1.15rem; }
+
+.w3-main > div.w3-container:not(.w3-top) p { margin: 0 0 1.1em; }
+
+.w3-main > div.w3-container:not(.w3-top) a {
+  color: var(--teal-600);
+  font-weight: 600;
+}
+.w3-main > div.w3-container:not(.w3-top) a:hover { color: var(--pink-dark); }
+
+/* --------------------------------------------------------------------------
+   Boutons (Voir la grille, Voir le calendrier, etc.)
+   -------------------------------------------------------------------------- */
+
+.w3-button.w3-pink {
+  background: var(--pink) !important;
+  color: #fff !important;
+  padding: 14px 26px !important;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: .01em;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, .08);
+  transition: transform .12s ease, background-color .12s ease, box-shadow .12s ease;
+}
+.w3-button.w3-pink:hover {
+  background: var(--pink-dark) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(212, 20, 90, .28);
+}
+.w3-button.w3-pink:active { transform: translateY(0); }
+
+/* --------------------------------------------------------------------------
+   Vidéos intégrées (iframes YouTube, etc.)
+   -------------------------------------------------------------------------- */
+
+.w3-main iframe {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  margin: 1.5em 0 2em;
+  border: 0;
+  border-radius: 6px;
+  box-shadow: 0 8px 28px rgba(6, 59, 55, .18);
+}
+
+/* --------------------------------------------------------------------------
+   Section Références (si présente sur la page)
+   -------------------------------------------------------------------------- */
+
+.references {
+  margin-top: 2.5em;
+  padding-top: 1.75em;
+  border-top: 2px solid var(--mint);
+}
+.references h2 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  color: var(--teal-900);
+}
+.reference {
+  color: var(--text);
+  font-size: .95rem;
+}
+
+/* --------------------------------------------------------------------------
+   Pied de page
+   -------------------------------------------------------------------------- */
+
+footer.w3-container.w3-theme {
+  background-color: var(--teal-900) !important;
+  padding: 32px clamp(24px, 5vw, 64px) !important;
+}
+footer.w3-container.w3-theme p {
+  color: var(--teal-200);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Accessibilité
+   -------------------------------------------------------------------------- */
+
+a:focus-visible,
+button:focus-visible,
+.w3-button:focus-visible {
+  outline: 3px solid var(--pink);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: .01ms !important; }
+}
