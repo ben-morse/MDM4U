@@ -47,32 +47,61 @@ $(function(){
 
 <!-- Tu peux complètement modifier le contenu ci-dessous -->
 
-<h2>À quoi sert les mesures de dispersion?</h2>
-<p></p>
+<<h2>À quoi servent les mesures de dispersion?</h2>
+<p>Les mesures de dispersion indiquent à quel point les données d'une distribution sont étalées ou concentrées autour d'une valeur centrale (moyenne ou médiane). Deux séries de données peuvent avoir la même moyenne en étant très différentes (proche/loin de moyenne). Les mesures de dispersion permettent de quantifier cette différence.</p>
+
 <h2>L'étendue</h2>
-<p></p>
+<p>L'étendue est la différence entre la plus grande valeur et la plus petite valeur d'une série de données.</p>
+<p><strong>Formule :</strong> étendue = valeur maximale − valeur minimale</p>
+<p><strong>Exemple :</strong> pour les notes 12, 15, 9, 18 et 14, l'étendue est 18 − 9 = 9. L'étendue est d'être sensible aux valeurs extrêmes, car elle ne dépend que de deux valeurs.</p>
+
 <h2>Les quartiles</h2>
-<p></p>
+<p>Les quartiles divisent une série de données ordonnée en quatre parties contenant chacune environ 25 % des valeurs.</p>
+<p>Le premier quartile (Q1) est la valeur sous laquelle se trouvent 25 % des données. Le deuxième quartile (Q2) est situé à la médiane (50 % des données se trouvent en dessous). Le troisième quartile (Q3) est la valeur sous laquelle se trouvent 75 % des données.</p>
+<p><strong>Exemple :</strong> pour la série ordonnée 3, 5, 7, 8, 10, 12, 15: Q1 = 5, Q2 = 8 et Q3 = 12.</p>
+
 <h2>L'écart interquartile</h2>
-<p></p>
+<p>L'écart interquartile est la différence entre le troisième quartile et le premier quartile. Il mesure l'étalement des 50 % de données situées au centre de la distribution, visualisé à travers une boite à moustache.</p>
+<p><strong>Formule :</strong> EIQ = Q3 − Q1</p>
+<p><strong>Exemple :</strong> avec Q1 = 5 et Q3 = 12, l'écart interquartile est 12 − 5 = 7. Contrairement à l'étendue, il n'est pas influencé par les valeurs extrêmes.</p>
+
 <h2>L'écart type</h2>
-<p></p>
+<p>L'écart type mesure la distance moyenne entre les valeurs d'une série et leur moyenne. Plus l'écart type est petit, plus les données sont regroupées autour de la moyenne. Plus il est grand, plus les données sont dispersées. On le note σ (sigma) pour une population et s pour un échantillon.<br> <br> (Imaginez pente d'une distribution normale)</p>
+
 <h2>Comment calculer l'écart type</h2>
-<p></p>
-<h1>Lien vers notes de cours</h1>
-<p><a href="" target="_blank"></a>
+<p>Voici les étapes pour calculer l'écart type :</p>
+<ol>
+  <li>Calculer la moyenne (x̄) des données.</li>
+  <li>Soustraire la moyenne à chaque valeur pour obtenir les écarts.</li>
+  <li>Élever chaque écart au carré.</li>
+  <li>Additionner tous les carrés des écarts.</li>
+  <li>Diviser cette somme par n (pour une population) ou par n − 1 (pour un échantillon). On obtient la variance.</li>
+  <li>Calculer la racine carrée de la variance.</li>
+</ol>
+<p><strong>Formule (population) :</strong> σ = √( Σ(xᵢ − μ)² / n )</p>
+<p><strong>Formule (échantillon) :</strong> s = √( Σ(xᵢ − x̄)² / (n − 1) )</p>
+<p><strong>Exemple :</strong> pour les valeurs 2, 4, 4, 4, 5, 5, 7 et 9, la moyenne est 5. Les carrés des écarts sont 9, 1, 1, 1, 0, 0, 4 et 16, pour une somme de 32. La variance (population) est 32 / 8 = 4, et l'écart type est donc √4 = 2.</p>
+
+<p><a href="https://docs.google.com/presentation/d/1tXPZIZGQORBiqncTZE7DXeNAXTLYVB5rUZZRTPkWiaU/edit" target="_blank">Notes de cours</a>
 </p>
-<h1>Exercices</h1>
-<p><a href="" target="_blank"></a>
+
+<p><a href="https://docs.google.com/document/d/e/2PACX-1vRdBhZvZ8W6o9wT0XkE-Kn6kpETOPs73bMQEzLkWnxhffEY6oJh0t7e02UxedwlNA/pub" target="_blank">Exercices 2.3</a>
 </p>
 
 <h>Références</h>
 
 <p class="reference">
-  Alloprof.<br>
-  <em>L'échantillonage</em><br>
-  https://www.alloprof.qc.ca/fr/eleves/bv/mathematiques/l-echantillonnage-secondaire-1-et-2-m1362s12. Accessed 21 Sept. 2026.<br>
-  Consulté le 22 septembre 2026.
+  Statistique Canada.<br>
+  <em>4.5 Mesures de la dispersion</em><br>
+  https://www150.statcan.gc.ca/edu/power-pouvoir/ch12/5214876-fra.htm. Accessed 14 Oct. 2026.<br>
+  Consulté le 8 octobre 2026.
+</p>
+
+<p class="reference">
+  Statistique Canada.<br>
+  <em>4.5.1 Calculer l'étendue et l'écart interquartile</em><br>
+  https://www150.statcan.gc.ca/edu/power-pouvoir/ch12/5214890-fra.htm. Accessed 14 Oct. 2026.<br>
+  Consulté le 8 octobre 2026.
 </p>
 <!-- Tu peux complètement modifier le contenu par dessus cette ligne -->
 
