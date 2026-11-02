@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MDM4U</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+body {font-family: "Roboto", sans-serif}
+.w3-bar-block .w3-bar-item {
+  padding: 16px;
+  font-weight: bold;
+}
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+<!--Navigation bar-->
+<div id="nav-placeholder">
+
+</div>
+
+<script>
+$(function(){
+  $("#nav-placeholder").load("nav.html");
+});
+</script>
+<!--end of Navigation bar-->
+
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+<div class="w3-main" style="margin-left:250px;">
+
+<div id="myTop" class="w3-container w3-top w3-theme w3-large">
+  <p><i class="fa fa-bars w3-button w3-teal w3-hide-large w3-xlarge" onclick="w3_open()"></i>
+  <span id="myIntro" class="w3-hide">MDM4U</span></p>
+</div>
+
+<header class="w3-container w3-theme" style="padding:64px 32px">
+  <h1 class="w3-xxxlarge">3.1 - Probabilités experimentales</h1>
+</header>
+
+<div class="w3-container" style="padding:32px">
+
+<!-- Tu peux complètement modifier le contenu ci-dessous -->
+<h1>Simulation 1 : manquer 3 bottés de suite</h1>
+<p>Un botteur de placement dans une équipe de football réussit 80 % de ses bottés. Détermine la probabilité expérimentale qu’il manque trois bottés de suite.
+</p>
+<h1>~1%</h1>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSq630ec4ApRipAAvmjXu2Ff7_3_K9ouqtH3xAC62xhrfK13gC9krwmX7HgNptu_faT9HXKPx3uvH1l/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
+<h1>Simulation 2 : un clavier défectueux</h1>
+    <p>Une entreprise d’ordinateurs fabrique des claviers, dont 10 % sont défectueux. Détermine la probabilité expérimentale qu’un clavier ou plus parmi les trois prochains à sortir de la chaîne de montage soient défectueux.
+</p>
+<h1>~26%</h1>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSq630ec4ApRipAAvmjXu2Ff7_3_K9ouqtH3xAC62xhrfK13gC9krwmX7HgNptu_faT9HXKPx3uvH1l/pubhtml?gid=1457594568&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+<h1>Simulation 3 : au moins 7/10 à un test vrai ou faux</h1>
+    <p>Détermine la probabilité expérimentale de deviner correctement au moins 7 questions de type vrai ou faux sur 10.
+</p>
+<h1>~16%</h1>
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSq630ec4ApRipAAvmjXu2Ff7_3_K9ouqtH3xAC62xhrfK13gC9krwmX7HgNptu_faT9HXKPx3uvH1l/pubhtml?gid=67528477&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+<h1>Simulation 4 : au moins 3/6 à un test à choix multiples</h1>
+<p>
+Détermine la probabilité expérimentale de deviner au moins 3 questions sur 6 lors d’un examen à choix multiples où toutes les questions comportent cinq choix de réponse.
+</p>
+<h1>~9%</h1>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSq630ec4ApRipAAvmjXu2Ff7_3_K9ouqtH3xAC62xhrfK13gC9krwmX7HgNptu_faT9HXKPx3uvH1l/pubhtml?gid=1146092894&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+</div>
+
+<footer class="w3-container w3-theme" style="padding:32px">
+  <p>Contenu de cette page web par M. Gore (prénom: Pytha)</p>
+</footer>
+     
+</div>
+
+<script>
+// Open and close the sidebar on medium and small screens
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Change style of top container on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("myTop").classList.add("w3-card-4", "w3-animate-opacity");
+    document.getElementById("myIntro").classList.add("w3-show-inline-block");
+  } else {
+    document.getElementById("myIntro").classList.remove("w3-show-inline-block");
+    document.getElementById("myTop").classList.remove("w3-card-4", "w3-animate-opacity");
+  }
+}
+
+</script>
+     
+</body>
+</html> 
